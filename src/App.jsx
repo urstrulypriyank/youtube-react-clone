@@ -1,4 +1,7 @@
+import { Provider } from "react-redux";
 import Headder from "./components/Headder";
+import Sidebar from "./components/Sidebar";
+import store from "./utils/store";
 
 function App() {
   return (
@@ -6,10 +9,10 @@ function App() {
       {/* 
       PLANNING OF MY YOUTUBE APPLICATION
 
-        <Headder/>
-            <TopLeft>
-            <SearchBar>
-            <TopRight>
+        <Headder/>  -done
+            <TopLeft> -toggle not working
+            <SearchBar> -done
+            <TopRight>  -done  
         <SideBar/>
         <Body>
             <ButtonList>
@@ -18,7 +21,10 @@ function App() {
 
       
       */}
-      <Headder /> 
+      <Provider store={store}>
+        <Headder />
+        <Sidebar />
+      </Provider>
     </>
   );
 }
