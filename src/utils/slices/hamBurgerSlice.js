@@ -15,8 +15,11 @@ const hamBurgerSlice = createSlice({
         state.sideBarWidthInRem = "0rem";
       else state.sideBarWidthInRem = SIDEBAR_WIDTH_REM;
     },
+    hideMenu: (state) => {
+      state.isMenuVisible = false;
+    },
   },
 });
-export const { toggleMenuVisibility, toggleSideBarWidthInRem } =
+export const { toggleMenuVisibility, toggleSideBarWidthInRem, hideMenu } =
   hamBurgerSlice.actions;
 export default hamBurgerSlice.reducer;

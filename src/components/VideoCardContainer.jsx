@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import VideoCard from "./VideoCard";
 import { useState } from "react";
 import { YT_MOST_POPULAR_API } from "../../constant";
-
+import { Link } from "react-router-dom";
 const Body = () => {
   const [videoList, setVideoList] = useState(null);
 
@@ -27,7 +27,11 @@ const Body = () => {
     <div className="   h-[90%] flex flex-row  flex-wrap overflow-x-scroll justify-around relative ">
       {videoList.map((item) => {
         // const { channelTitle, description, title, thumbnails } = item.snippet;
-        return <VideoCard key={item.id} {...item.snippet} />;
+        return (
+          <Link to={"/watch?v=" + item.id} key={item.id}>
+            <VideoCard key={item.id} {...item.snippet} />;
+          </Link>
+        );
       })}
     </div>
   );
