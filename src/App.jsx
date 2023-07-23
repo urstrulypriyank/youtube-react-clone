@@ -2,6 +2,26 @@ import { Provider } from "react-redux";
 import Headder from "./components/Headder";
 import Sidebar from "./components/Sidebar";
 import store from "./utils/store";
+import HomePageBody from "./components/HomePageBody";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import WatchPage from "./components/WatchPage";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Outlet />,
+    children: [
+      {
+        path: "/",
+        element: <HomePageBody />,
+      },
+      {
+        path: '/watch',
+        element: <WatchPage/>
+      }
+    ],
+  },
+]);
 
 function App() {
   return (
@@ -21,9 +41,17 @@ function App() {
 
       
       */}
+
       <Provider store={store}>
         <Headder />
-        <Sidebar />
+        <div className="mt-14 flex">
+          <Sidebar />
+          <div>
+            <RouterProvider router={router}>
+              <Outlet />
+            </RouterProvider>
+          </div>
+        </div>
       </Provider>
     </>
   );

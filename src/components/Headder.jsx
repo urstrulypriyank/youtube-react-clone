@@ -6,22 +6,26 @@ import YoutubeLogo, {
 import Ham from "../assets/hamburger.png";
 import SearchBar from "./SearchBar";
 import { useDispatch } from "react-redux";
-import { toggleMenuVisibility } from "../utils/slices/hamBurgerSlice";
+import {
+  toggleMenuVisibility,
+  toggleSideBarWidthInRem,
+} from "../utils/slices/hamBurgerSlice";
 
 const Headder = () => {
   const dispatch = useDispatch();
   const handleClick = () => {
     dispatch(toggleMenuVisibility());
+    dispatch(toggleSideBarWidthInRem());
   };
   return (
-    <div className="w-[100vw] grid grid-cols-6 gap-2 shadow-lg  ">
+    <div className="w-[100vw] grid grid-cols-6 gap-2 shadow-lg fixed top-0 left-0 bg-white ">
       {/* top Left */}
       <div className="flex mx-2 my-2 items-center">
         <ul className="flex [&>*]:h-10 [&>*]:w-10 space-x-2 [&>*]:cursor-pointer">
           <li className="" onClick={() => handleClick()}>
             <img src={Ham} alt="I" />
           </li>
-          <li className="h-20 w-20">
+          <li className="md:h-20 md:w-20 h-16 w-16  ">
             <YoutubeLogo />
           </li>
         </ul>
