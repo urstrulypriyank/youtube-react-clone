@@ -27,6 +27,7 @@ const Body = () => {
     <div className="   h-[90%] flex flex-row  flex-wrap overflow-x-scroll justify-around relative ">
       {videoList.map((item) => {
         // const { channelTitle, description, title, thumbnails } = item.snippet;
+
         return (
           <Link to={"/watch?v=" + item.id} key={item.id}>
             <VideoCard key={item.id} {...item.snippet} />;
