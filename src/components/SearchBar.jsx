@@ -4,6 +4,7 @@ import store from "../utils/store";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchText } from "../utils/slices/searchTextSlice";
 import { YT_SEARCH_SUGGESTION_API } from "../../constant";
+import { setSearchCache } from "../utils/slices/searchCacheSlice";
 const SearchBar = () => {
   const [searchIconVisibility, setSetSearchIconVisibility] = useState(false);
   const [borderColor, setBorderColor] = useState("border-black");
@@ -12,20 +13,21 @@ const SearchBar = () => {
   const searchText = useSelector((store) => store.searchText.searchText);
   const [showSuggestion, setShowSuggestion] = useState(false);
   const [suggestionList, setSuggestionList] = useState(null);
-
+  const searchCache = useSelector((store) => store.searchCache.obj);
   const searchSuggestion = async () => {
-    console.log("API -CALLED WITH", searchText);
     const data = await fetch(YT_SEARCH_SUGGESTION_API + searchText);
     const new_data = await data.json();
-    // console.log(new_data[1]);
+    dispatch(setSearchCache({ [searchText]: new_data[1] }));
     setSuggestionList(new_data[1]);
   };
 
   useEffect(() => {
     if (searchText.length == 0) {
       setSuggestionList(null);
-
       return;
+    }
+    if (searchCache[searchText]) {
+      return setSuggestionList(searchCache[searchText]);
     }
     const timer = setTimeout(() => {
       searchSuggestion();
@@ -81,7 +83,7 @@ const SearchBar = () => {
           🔎
         </button>
       </form>
-      <div className="fixed left-0 top-14 my-0.5 w-screen z-50 border border-red-500 ">
+      <div className="fixed left-0 top-14 my-0.5 w-screen z-50 border ">
         {showSuggestion && suggestionList && (
           <div className=" w-[40%] h-96  mx-auto bg-white rounded-lg px-4 py-1  ">
             <ul>
