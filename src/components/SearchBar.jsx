@@ -17,13 +17,14 @@ const SearchBar = () => {
     console.log("API -CALLED WITH", searchText);
     const data = await fetch(YT_SEARCH_SUGGESTION_API + searchText);
     const new_data = await data.json();
-    console.log(new_data[1]);
+    // console.log(new_data[1]);
     setSuggestionList(new_data[1]);
   };
 
   useEffect(() => {
     if (searchText.length == 0) {
       setSuggestionList(null);
+
       return;
     }
     const timer = setTimeout(() => {
@@ -81,13 +82,12 @@ const SearchBar = () => {
         </button>
       </form>
       <div className="fixed left-0 top-14 my-0.5 w-screen z-50 border border-red-500 ">
-        {showSuggestion && (
+        {showSuggestion && suggestionList && (
           <div className=" w-[40%] h-96  mx-auto bg-white rounded-lg px-4 py-1  ">
             <ul>
               {suggestionList?.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
-              {/* <li>Home</li> */}
             </ul>
           </div>
         )}
