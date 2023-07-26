@@ -10,7 +10,9 @@ import {
   toggleMenuVisibility,
   toggleSideBarWidthInRem,
 } from "../utils/slices/hamBurgerSlice";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
+// END OF IMPORTS
 const Headder = () => {
   const dispatch = useDispatch();
   const handleClick = () => {
@@ -18,7 +20,7 @@ const Headder = () => {
     dispatch(toggleSideBarWidthInRem());
   };
   return (
-    <div className="w-[100vw] grid grid-cols-6 gap-2 shadow-lg fixed top-0 left-0 bg-white ">
+    <div className="w-[100vw] grid grid-cols-6 gap-2 shadow-lg fixed top-0 left-0 bg-white z-50 ">
       {/* top Left */}
       <div className="flex mx-2 my-2 items-center">
         <ul className="flex [&>*]:h-10 [&>*]:w-10 space-x-2 [&>*]:cursor-pointer">

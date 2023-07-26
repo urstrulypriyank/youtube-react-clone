@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-
 import store from "../utils/store";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchText } from "../utils/slices/searchTextSlice";
 import { YT_SEARCH_SUGGESTION_API } from "../../constant";
 import { setSearchCache } from "../utils/slices/searchCacheSlice";
+import { Link, Outlet, RouterProvider } from "react-router-dom";
+
+//  EO IMPORT STATEMENTS
 const SearchBar = () => {
   const [searchIconVisibility, setSetSearchIconVisibility] = useState(false);
   const [borderColor, setBorderColor] = useState("border-black");
@@ -17,6 +19,7 @@ const SearchBar = () => {
   const searchSuggestion = async () => {
     const data = await fetch(YT_SEARCH_SUGGESTION_API + searchText);
     const new_data = await data.json();
+    console.log(new_data);
     dispatch(setSearchCache({ [searchText]: new_data[1] }));
     setSuggestionList(new_data[1]);
   };
@@ -58,7 +61,10 @@ const SearchBar = () => {
 
   return (
     <>
-      <form className="flex justify-center items-center mx-auto  ">
+      <form
+        className="flex justify-center items-center mx-auto  "
+        // onBlur={() => setShowSuggestion(false)}
+      >
         <div
           className={`border  ${borderColor}   rounded-l-2xl [&>*]:my-1 px-2 space-x-2 `}
         >
@@ -72,7 +78,6 @@ const SearchBar = () => {
               dispatch(setSearchText(e.target.value));
             }}
             onFocus={() => setShowSuggestion(true)}
-            onBlur={() => setShowSuggestion(false)}
           />
         </div>
         <button
@@ -82,18 +87,23 @@ const SearchBar = () => {
         >
           🔎
         </button>
+        <div className="fixed left-0 top-14 my-0.5 w-screen z-50 border ">
+          {showSuggestion && suggestionList && (
+            <div
+              className=" w-[40%] h-96  mx-auto bg-white rounded-lg px-4 py-1  "
+              onFocus={() => setShowSuggestion(true)}
+            >
+              <ul>
+                {suggestionList?.map((item) => (
+                  <Link to={"/results?search_query=" + item} key={item}>
+                    <li key={item}>{item}</li>
+                  </Link>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
       </form>
-      <div className="fixed left-0 top-14 my-0.5 w-screen z-50 border ">
-        {showSuggestion && suggestionList && (
-          <div className=" w-[40%] h-96  mx-auto bg-white rounded-lg px-4 py-1  ">
-            <ul>
-              {suggestionList?.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
     </>
   );
 };

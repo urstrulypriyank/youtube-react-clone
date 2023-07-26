@@ -13,9 +13,6 @@ const Sidebar = () => {
         <li>Shorts</li>
         <li>Subscription</li>
         <li>Library</li>
-
-        <li></li>
-        <li></li>
       </ul>
     </section>
   );
