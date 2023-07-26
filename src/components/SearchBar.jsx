@@ -15,6 +15,7 @@ const SearchBar = () => {
   const searchText = useSelector((store) => store.searchText.searchText);
   const [showSuggestion, setShowSuggestion] = useState(false);
   const [suggestionList, setSuggestionList] = useState(null);
+  const [mouseOverSuggestionList, setMouseOverSuggestionList] = useState(true);
   const searchCache = useSelector((store) => store.searchCache.obj);
   const searchSuggestion = async () => {
     const data = await fetch(YT_SEARCH_SUGGESTION_API + searchText);
@@ -63,7 +64,9 @@ const SearchBar = () => {
     <>
       <form
         className="flex justify-center items-center mx-auto  "
-        // onBlur={() => setShowSuggestion(false)}
+        onBlur={() => {
+          if (!mouseOverSuggestionList) return setShowSuggestion(false);
+        }}
       >
         <div
           className={`border  ${borderColor}   rounded-l-2xl [&>*]:my-1 px-2 space-x-2 `}
@@ -92,6 +95,7 @@ const SearchBar = () => {
             <div
               className=" w-[40%] h-96  mx-auto bg-white rounded-lg px-4 py-1  "
               onFocus={() => setShowSuggestion(true)}
+              // onMouseLeave={() => setShowSuggestion(false)}
             >
               <ul>
                 {suggestionList?.map((item) => (
