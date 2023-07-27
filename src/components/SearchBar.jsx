@@ -72,7 +72,10 @@ const SearchBar = () => {
           if (!mouseOverSuggestionList)
             return dispatch(setShowSuggestion(false));
         }}
-        onSubmit={() => navigate("/results?search_query=" + searchText)}
+        onSubmit={(e) => {
+          e.preventDefault();
+          navigate("/results?search_query=" + searchText);
+        }}
       >
         <div
           className={`border  ${borderColor}   rounded-l-2xl [&>*]:my-1 px-2 space-x-2 `}
