@@ -3,6 +3,7 @@ import VideoCard from "./VideoCard";
 import { useState } from "react";
 import { YT_MOST_POPULAR_API } from "../../constant";
 import { Link } from "react-router-dom";
+
 const Body = () => {
   const [videoList, setVideoList] = useState(null);
 
@@ -13,7 +14,7 @@ const Body = () => {
       );
       const new_data = await data.json();
       setVideoList(new_data.items);
-      console.log(new_data.items);
+      // console.log(new_data.items);
     };
     fetchMostPopularVideo();
   }, []);

@@ -2,7 +2,7 @@ const VideoCard = ({ channelTitle, title, thumbnails }) => {
   return (
     <div className="w-[280px] rounded-md border">
       <img
-        src={thumbnails?.standard?.url}
+        src={thumbnails?.standard?.url || thumbnails?.default?.url}
         alt="Laptop"
         className="h-[150px] w-full rounded-md object-cover"
       />

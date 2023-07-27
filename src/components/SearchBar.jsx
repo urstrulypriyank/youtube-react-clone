@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setSearchText } from "../utils/slices/searchTextSlice";
 import { YT_SEARCH_SUGGESTION_API } from "../../constant";
 import { setSearchCache } from "../utils/slices/searchCacheSlice";
-import { Link, Outlet, RouterProvider } from "react-router-dom";
+import { Link, Outlet, RouterProvider, useNavigate } from "react-router-dom";
+import { setShowSuggestion } from "../utils/slices/searchStateSlice";
 
 //  EO IMPORT STATEMENTS
 const SearchBar = () => {
@@ -13,14 +14,17 @@ const SearchBar = () => {
   // const [searchText, setSearchText] = useState(null);
   const dispatch = useDispatch();
   const searchText = useSelector((store) => store.searchText.searchText);
-  const [showSuggestion, setShowSuggestion] = useState(false);
+  const navigate = useNavigate();
+  const showSuggestion = useSelector(
+    (store) => store.searchState.showSuggestion
+  );
   const [suggestionList, setSuggestionList] = useState(null);
   const [mouseOverSuggestionList, setMouseOverSuggestionList] = useState(true);
   const searchCache = useSelector((store) => store.searchCache.obj);
   const searchSuggestion = async () => {
     const data = await fetch(YT_SEARCH_SUGGESTION_API + searchText);
     const new_data = await data.json();
-    console.log(new_data);
+    // console.log(new_data);
     dispatch(setSearchCache({ [searchText]: new_data[1] }));
     setSuggestionList(new_data[1]);
   };
@@ -65,8 +69,10 @@ const SearchBar = () => {
       <form
         className="flex justify-center items-center mx-auto  "
         onBlur={() => {
-          if (!mouseOverSuggestionList) return setShowSuggestion(false);
+          if (!mouseOverSuggestionList)
+            return dispatch(setShowSuggestion(false));
         }}
+        onSubmit={() => navigate("/results?search_query=" + searchText)}
       >
         <div
           className={`border  ${borderColor}   rounded-l-2xl [&>*]:my-1 px-2 space-x-2 `}
@@ -80,22 +86,25 @@ const SearchBar = () => {
             onChange={(e) => {
               dispatch(setSearchText(e.target.value));
             }}
-            onFocus={() => setShowSuggestion(true)}
+            onFocus={() => dispatch(setShowSuggestion(true))}
+            onMouseOver={() => dispatch(setShowSuggestion(true))}
+            onBlur={() => dispatch(setShowSuggestion(false))}
           />
         </div>
         <button
           className="border border-black  rounded-2xl border-l-0 rounded-l-none px-4 py-1"
           type="submit"
-          onClick={() => console.log("CLikced")}
+          onClick={(e) => e.preventDefault()}
+          onSubmit={() => navigate("/results?search_query=" + searchText)}
         >
-          🔎
+          <Link to={"/results?search_query=" + searchText}>🔎</Link>
         </button>
         <div className="fixed left-0 top-14 my-0.5 w-screen z-50 border ">
           {showSuggestion && suggestionList && (
             <div
               className=" w-[40%] h-96  mx-auto bg-white rounded-lg px-4 py-1  "
-              onFocus={() => setShowSuggestion(true)}
-              // onMouseLeave={() => setShowSuggestion(false)}
+              onFocus={() => dispatch(setShowSuggestion(true))}
+              onMouseLeave={() => setShowSuggestion(false)}
             >
               <ul>
                 {suggestionList?.map((item) => (
