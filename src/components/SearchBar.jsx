@@ -69,8 +69,8 @@ const SearchBar = () => {
       <form
         className="flex justify-center items-center mx-auto  "
         onBlur={() => {
-          if (!mouseOverSuggestionList)
-            return dispatch(setShowSuggestion(false));
+          if (mouseOverSuggestionList) return dispatch(setShowSuggestion(true));
+          return dispatch(setShowSuggestion(false));
         }}
         onSubmit={(e) => {
           e.preventDefault();
@@ -90,7 +90,7 @@ const SearchBar = () => {
               dispatch(setSearchText(e.target.value));
             }}
             onFocus={() => dispatch(setShowSuggestion(true))}
-            onMouseOver={() => dispatch(setShowSuggestion(true))}
+            // onMouseOver={() => dispatch(setShowSuggestion(true))}
             onBlur={() => dispatch(setShowSuggestion(false))}
           />
         </div>
@@ -106,15 +106,22 @@ const SearchBar = () => {
           <Link to={"/results?search_query=" + searchText}>🔎</Link>
         </button>
         <div className="fixed left-0 top-14 my-0.5 w-screen z-50 border ">
-          {showSuggestion && suggestionList && (
+          {showSuggestion && suggestionList && mouseOverSuggestionList && (
             <div
               className=" w-[40%] h-96  mx-auto bg-white rounded-lg px-4 py-1  "
               onFocus={() => dispatch(setShowSuggestion(true))}
               onMouseLeave={() => setShowSuggestion(false)}
+              onMouseOver={() => {
+                setMouseOverSuggestionList(true);
+              }}
             >
               <ul>
                 {suggestionList?.map((item) => (
-                  <Link to={"/results?search_query=" + item} key={item}>
+                  <Link
+                    to={"/results?search_query=" + item}
+                    key={item}
+                    onClick={() => console.log("click")}
+                  >
                     <li key={item}>{item}</li>
                   </Link>
                 ))}
