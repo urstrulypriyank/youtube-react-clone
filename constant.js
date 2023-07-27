@@ -6,7 +6,8 @@ export const YT_SEARCH_SUGGESTION_API =
 
 export const YT_SEARCH_API =
   "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25";
-
+export const YT_COMMENT_API =
+  "https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&";
 // CONSTANT VALUE
 export const SIDEBAR_WIDTH_REM = "13rem";
 
@@ -903,6 +904,833 @@ export const MOCK_API_SEARCH_DATA = [
       channelTitle: "Learn with Jaspal",
       liveBroadcastContent: "none",
       publishTime: "2023-07-20T14:28:51Z",
+    },
+  },
+];
+
+export const comment_mock_data = [
+  {
+    kind: "youtube#commentThread",
+    etag: "SuFq_DvwsKbSqGO9MBmWLptGNdg",
+    id: "UgzTRgw5ef8xgJiu3q14AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "RSw81an3MLbV0ebiEJAfcw7m7vE",
+        id: "UgzTRgw5ef8xgJiu3q14AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay:
+            '𝑺𝒖𝒃𝒔𝒄𝒓𝒊𝒃𝒆 𝒕𝒐 𝑾𝒂𝒕𝒄𝒉 𝒕𝒉𝒆 𝑩𝑬𝑺𝑻 𝑶𝑭 𝑴𝑶𝑽𝑰𝑬𝑺 𝒉𝒆𝒓𝒆 : <a href="about:invalid#zCSafez"></a><a href="https://bit.ly/3q5xovm">https://bit.ly/3q5xovm</a>',
+          textOriginal:
+            "𝑺𝒖𝒃𝒔𝒄𝒓𝒊𝒃𝒆 𝒕𝒐 𝑾𝒂𝒕𝒄𝒉 𝒕𝒉𝒆 𝑩𝑬𝑺𝑻 𝑶𝑭 𝑴𝑶𝑽𝑰𝑬𝑺 𝒉𝒆𝒓𝒆 : https://bit.ly/3q5xovm",
+          authorDisplayName: "Zee Studios",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/PemRqSo-qpcCAiHi7ryXYF8Z_0zgrl1EiFb-bEBd4TQ4v3gEm5FdW8JiE_n0Qkx61uPKjfV8Hfw=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UC3jMepkLKF8y4iiwWmAB3RA",
+          authorChannelId: {
+            value: "UC3jMepkLKF8y4iiwWmAB3RA",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 1275,
+          publishedAt: "2023-07-27T04:57:47Z",
+          updatedAt: "2023-07-27T04:57:47Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 94,
+      isPublic: true,
+    },
+    replies: {
+      comments: [
+        {
+          kind: "youtube#comment",
+          etag: "cc6syqeiMnBFaxs-gcClmoZlcws",
+          id: "UgzTRgw5ef8xgJiu3q14AaABAg.9seYphj6xbM9sfQZqAIedF",
+          snippet: {
+            videoId: "mljj92tRwlk",
+            textDisplay:
+              '<a href="https://youtube.com/@Indiannatural671">https://youtube.com/@Indiannatural671</a>',
+            textOriginal: "https://youtube.com/@Indiannatural671",
+            parentId: "UgzTRgw5ef8xgJiu3q14AaABAg",
+            authorDisplayName: "Patna Bihar #$$",
+            authorProfileImageUrl:
+              "https://yt3.ggpht.com/9qotGwFucpoVTGyoXm0TWpGq8VLxLhTnsFTXL_x5cFnHXV6L3gO9c7WcCKo78vsXZTIWWKw=s48-c-k-c0x00ffffff-no-rj",
+            authorChannelUrl:
+              "http://www.youtube.com/channel/UC3cLLJhcOviDa4bEGVC-JuA",
+            authorChannelId: {
+              value: "UC3cLLJhcOviDa4bEGVC-JuA",
+            },
+            canRate: true,
+            viewerRating: "none",
+            likeCount: 0,
+            publishedAt: "2023-07-27T13:04:49Z",
+            updatedAt: "2023-07-27T13:04:49Z",
+          },
+        },
+        {
+          kind: "youtube#comment",
+          etag: "QQNeRmaR9VtcXbZOGBe8gWiUPCg",
+          id: "UgzTRgw5ef8xgJiu3q14AaABAg.9seYphj6xbM9sfQNvEPUb8",
+          snippet: {
+            videoId: "mljj92tRwlk",
+            textDisplay:
+              '<a href="https://youtube.com/@Bhimwane">https://youtube.com/@Bhimwane</a>',
+            textOriginal: "https://youtube.com/@Bhimwane",
+            parentId: "UgzTRgw5ef8xgJiu3q14AaABAg",
+            authorDisplayName: "BHIM ARMY  KA DIWANA💙",
+            authorProfileImageUrl:
+              "https://yt3.ggpht.com/TjUeg-Ir5BWdUHwLwljebLD_D9c4i6D_NFcrBCWAqnZEn4VzpbTUcBHBQ0qCkEKTP9NE8-kjHVU=s48-c-k-c0x00ffffff-no-rj",
+            authorChannelUrl:
+              "http://www.youtube.com/channel/UCs603uraRiETraAGYaNpt9Q",
+            authorChannelId: {
+              value: "UCs603uraRiETraAGYaNpt9Q",
+            },
+            canRate: true,
+            viewerRating: "none",
+            likeCount: 0,
+            publishedAt: "2023-07-27T13:03:11Z",
+            updatedAt: "2023-07-27T13:03:11Z",
+          },
+        },
+        {
+          kind: "youtube#comment",
+          etag: "ZmVPu0v5aPYQ9Tnq-1ARFQSwwYQ",
+          id: "UgzTRgw5ef8xgJiu3q14AaABAg.9seYphj6xbM9sfPvSZ8RF4",
+          snippet: {
+            videoId: "mljj92tRwlk",
+            textDisplay:
+              '​@Arif Shaikh<a href="https://youtube.com/shorts/X_Y5FMbTiso?feature=share">https://youtube.com/shorts/X_Y5FMbTiso?feature=share</a>',
+            textOriginal:
+              "​@Arif Shaikhhttps://youtube.com/shorts/X_Y5FMbTiso?feature=share",
+            parentId: "UgzTRgw5ef8xgJiu3q14AaABAg",
+            authorDisplayName: "pencil.sketch.artbook",
+            authorProfileImageUrl:
+              "https://yt3.ggpht.com/ZF4XsIqu9X3lFr5eQ8PU5xifXIjetZUOSXNXHrimVSgzz1JTgXlfFZHhJYYG2N9zd8y8PlEB=s48-c-k-c0x00ffffff-no-rj",
+            authorChannelUrl:
+              "http://www.youtube.com/channel/UC7n9sobGXeE-13KlJVsc-iQ",
+            authorChannelId: {
+              value: "UC7n9sobGXeE-13KlJVsc-iQ",
+            },
+            canRate: true,
+            viewerRating: "none",
+            likeCount: 0,
+            publishedAt: "2023-07-27T12:59:10Z",
+            updatedAt: "2023-07-27T12:59:10Z",
+          },
+        },
+        {
+          kind: "youtube#comment",
+          etag: "q_7tdbYZ1tTVdsNMaOu4aFLsYFI",
+          id: "UgzTRgw5ef8xgJiu3q14AaABAg.9seYphj6xbM9sfPnh_kH-f",
+          snippet: {
+            videoId: "mljj92tRwlk",
+            textDisplay:
+              '​@Virat.Takuli<a href="https://youtube.com/shorts/X_Y5FMbTiso?feature=share">https://youtube.com/shorts/X_Y5FMbTiso?feature=share</a>',
+            textOriginal:
+              "​@Virat.Takulihttps://youtube.com/shorts/X_Y5FMbTiso?feature=share",
+            parentId: "UgzTRgw5ef8xgJiu3q14AaABAg",
+            authorDisplayName: "pencil.sketch.artbook",
+            authorProfileImageUrl:
+              "https://yt3.ggpht.com/ZF4XsIqu9X3lFr5eQ8PU5xifXIjetZUOSXNXHrimVSgzz1JTgXlfFZHhJYYG2N9zd8y8PlEB=s48-c-k-c0x00ffffff-no-rj",
+            authorChannelUrl:
+              "http://www.youtube.com/channel/UC7n9sobGXeE-13KlJVsc-iQ",
+            authorChannelId: {
+              value: "UC7n9sobGXeE-13KlJVsc-iQ",
+            },
+            canRate: true,
+            viewerRating: "none",
+            likeCount: 0,
+            publishedAt: "2023-07-27T12:58:06Z",
+            updatedAt: "2023-07-27T12:58:06Z",
+          },
+        },
+        {
+          kind: "youtube#comment",
+          etag: "GVYM4oEPcoB28i5bzOwfGwI-fjY",
+          id: "UgzTRgw5ef8xgJiu3q14AaABAg.9seYphj6xbM9sfPmPt1X__",
+          snippet: {
+            videoId: "mljj92tRwlk",
+            textDisplay:
+              '​@sachin sino vlog<a href="https://youtube.com/shorts/X_Y5FMbTiso?feature=share">https://youtube.com/shorts/X_Y5FMbTiso?feature=share</a>',
+            textOriginal:
+              "​@sachin sino vloghttps://youtube.com/shorts/X_Y5FMbTiso?feature=share",
+            parentId: "UgzTRgw5ef8xgJiu3q14AaABAg",
+            authorDisplayName: "pencil.sketch.artbook",
+            authorProfileImageUrl:
+              "https://yt3.ggpht.com/ZF4XsIqu9X3lFr5eQ8PU5xifXIjetZUOSXNXHrimVSgzz1JTgXlfFZHhJYYG2N9zd8y8PlEB=s48-c-k-c0x00ffffff-no-rj",
+            authorChannelUrl:
+              "http://www.youtube.com/channel/UC7n9sobGXeE-13KlJVsc-iQ",
+            authorChannelId: {
+              value: "UC7n9sobGXeE-13KlJVsc-iQ",
+            },
+            canRate: true,
+            viewerRating: "none",
+            likeCount: 0,
+            publishedAt: "2023-07-27T12:57:56Z",
+            updatedAt: "2023-07-27T12:57:56Z",
+          },
+        },
+      ],
+    },
+  },
+  {
+    kind: "youtube#commentThread",
+    etag: "mGvaxwbvjTq252Wx9rQ1XSv3s1M",
+    id: "UgyXB6Z-gAj_TYwejgF4AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "yDKrLoAg8LSxl68-4FpXziVTWvY",
+        id: "UgyXB6Z-gAj_TYwejgF4AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay:
+            "It&#39;s nostalgic to see Sunny ji and Ameesha ji together after long long time. Best wishes for Gadar2",
+          textOriginal:
+            "It's nostalgic to see Sunny ji and Ameesha ji together after long long time. Best wishes for Gadar2",
+          authorDisplayName: "Bappy The Drifter",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/ytc/AOPolaT9m1e5eQ5hcALC8ZbNqW5HgfNXOHd-_XIy_bKe=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UC_Hj49W_j1Q7XpTr_1-Kj9Q",
+          authorChannelId: {
+            value: "UC_Hj49W_j1Q7XpTr_1-Kj9Q",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 0,
+          publishedAt: "2023-07-27T13:09:38Z",
+          updatedAt: "2023-07-27T13:09:38Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 0,
+      isPublic: true,
+    },
+  },
+  {
+    kind: "youtube#commentThread",
+    etag: "loBYmbQfi6n5ATKHChc7A5veFX8",
+    id: "UgylwEqNj5LUFhnp9KZ4AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "Ip53GCj1IPbRa1fEHoYTnFJPhDo",
+        id: "UgylwEqNj5LUFhnp9KZ4AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay: "Jay shree ram",
+          textOriginal: "Jay shree ram",
+          authorDisplayName: "Gyan Ke Bhandar",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/_MsQdVUAd91YFWiKgvAVL8gWnLMpFnyZkZvbZkPwSoE5bnV5qB6X-P9O9lBrtkxfL8J5aymmGQ=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UC5q_iHbMM8pb83BnL7RtbLw",
+          authorChannelId: {
+            value: "UC5q_iHbMM8pb83BnL7RtbLw",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 0,
+          publishedAt: "2023-07-27T13:09:34Z",
+          updatedAt: "2023-07-27T13:09:34Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 0,
+      isPublic: true,
+    },
+  },
+  {
+    kind: "youtube#commentThread",
+    etag: "gvSxgpdnkvVG9qKjJtkLtvx-2XY",
+    id: "Ugyb--4OkEyFlLXJF9B4AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "sa9v6p3yrUlNQdeZf9Gf1gnJUx8",
+        id: "Ugyb--4OkEyFlLXJF9B4AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay:
+            "Handpump last me dikhaya..... Yaar jab bhi main handpump dekhta hu main bhi use ukhadhne ki koshish ek baar krta hu....😂😂😂",
+          textOriginal:
+            "Handpump last me dikhaya..... Yaar jab bhi main handpump dekhta hu main bhi use ukhadhne ki koshish ek baar krta hu....😂😂😂",
+          authorDisplayName: "pink orchids",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/ytc/AOPolaTRW0vjzQ6E0M2R5L-2rti4oQd-npkF9ZqFcA5EgompxRJMeaeLI00we-xgteaa=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UC-HL44-H5zNuAxJ1FeRhe_A",
+          authorChannelId: {
+            value: "UC-HL44-H5zNuAxJ1FeRhe_A",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 0,
+          publishedAt: "2023-07-27T13:09:28Z",
+          updatedAt: "2023-07-27T13:09:28Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 0,
+      isPublic: true,
+    },
+  },
+  {
+    kind: "youtube#commentThread",
+    etag: "3GGENq7PUfAzH08s2nRELd-XHNs",
+    id: "Ugx3g_yyPXFIRafCtxt4AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "r9AiLhIcXlXOwM3syhUPLzPFQb0",
+        id: "Ugx3g_yyPXFIRafCtxt4AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay: "Hindustan jindabad ❤❤❤❤❤❤❤❤❤",
+          textOriginal: "Hindustan jindabad ❤❤❤❤❤❤❤❤❤",
+          authorDisplayName: "Nitin kumar",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/H6YlwS5LngsAZAZsglTSoHK-ZcNWjBtBKnl_BQC_tZWVM7a-eYLctwdZOI0wKWm3aKnBqVazgA=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UCbFhCeTFurcuQVZqR2vYY5w",
+          authorChannelId: {
+            value: "UCbFhCeTFurcuQVZqR2vYY5w",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 0,
+          publishedAt: "2023-07-27T13:09:21Z",
+          updatedAt: "2023-07-27T13:09:21Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 0,
+      isPublic: true,
+    },
+  },
+  {
+    kind: "youtube#commentThread",
+    etag: "6gkznDqer2j1ayKcq7T07WOLZqs",
+    id: "UgzgaaU3GGK2Uimtb-p4AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "RcdiRwZo3qPYwswRNQlSZ_A0uz0",
+        id: "UgzgaaU3GGK2Uimtb-p4AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay: "Laughing 😂 option ni he wrna world record banta",
+          textOriginal: "Laughing 😂 option ni he wrna world record banta",
+          authorDisplayName: "Rana Tayyab",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/j1NISrTUuhppWCIA8Xs5afo0ck6g07lRqYyA61nxJzZgPb2cLsHCF8_mNffoKb2BYt2QrUjaBg=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UC0kgC4j6WLJog4ZoISUNhrg",
+          authorChannelId: {
+            value: "UC0kgC4j6WLJog4ZoISUNhrg",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 0,
+          publishedAt: "2023-07-27T13:09:20Z",
+          updatedAt: "2023-07-27T13:09:20Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 0,
+      isPublic: true,
+    },
+  },
+  {
+    kind: "youtube#commentThread",
+    etag: "_gCRCiH6-Nxni5NhwxxCo_XYA8Y",
+    id: "Ugx9C_44YrTMfD1DzJ94AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "fk1sU6PtjA2rtg_rqBJSAHJA4Xs",
+        id: "Ugx9C_44YrTMfD1DzJ94AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay:
+            "Sunny paji be like - Mai to papa hu....iss duniya ka papa🔥🔥🤩",
+          textOriginal:
+            "Sunny paji be like - Mai to papa hu....iss duniya ka papa🔥🔥🤩",
+          authorDisplayName: "Rohit Suman",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/ytc/AOPolaQWH-iw1m35AXT67kNEd02BuFzsvBWdFIb3n1D47Q=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UCS4KwUA4Wc1iYS1I0lQ5x8g",
+          authorChannelId: {
+            value: "UCS4KwUA4Wc1iYS1I0lQ5x8g",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 1,
+          publishedAt: "2023-07-27T13:09:18Z",
+          updatedAt: "2023-07-27T13:09:18Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 0,
+      isPublic: true,
+    },
+  },
+  {
+    kind: "youtube#commentThread",
+    etag: "QxuCiZi_UrMeOMQQSCvP67y0Ss4",
+    id: "UgxsduTCa1QMztYmDSx4AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "oVbM5xLt7ZAEXawQH10F4WUvdTo",
+        id: "UgxsduTCa1QMztYmDSx4AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay:
+            "As a tis jis Tarah se gadar2 ka trailer  26july Kargil Vijay divas pr launch hua kasam se rongte khde ho gye sunny da ki dhmakedaar action aur buland awaj sunkar❤ ab to bs 11 August 🎉",
+          textOriginal:
+            "As a tis jis Tarah se gadar2 ka trailer  26july Kargil Vijay divas pr launch hua kasam se rongte khde ho gye sunny da ki dhmakedaar action aur buland awaj sunkar❤ ab to bs 11 August 🎉",
+          authorDisplayName: "BED_Student",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/1va3bY0PYabNBGL5RPOSGJSOhweFTG7b2OPsSrfUuHg376WmxRXbpSHjJZXUZTvTfGz3QYyJ=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UC1ReXM_n3RVzIzz_S4p-btQ",
+          authorChannelId: {
+            value: "UC1ReXM_n3RVzIzz_S4p-btQ",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 0,
+          publishedAt: "2023-07-27T13:09:15Z",
+          updatedAt: "2023-07-27T13:09:15Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 0,
+      isPublic: true,
+    },
+  },
+  {
+    kind: "youtube#commentThread",
+    etag: "r87XcUf5BxE1a38RUJzzS887Pgs",
+    id: "UgwpJVFy7rQ8SqlHg494AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "EA-b8gZxYcBxWJRaT9OotkZHa2A",
+        id: "UgwpJVFy7rQ8SqlHg494AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay: "🎉🎉🎉",
+          textOriginal: "🎉🎉🎉",
+          authorDisplayName: "keshav gadhwal",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/ytc/AOPolaR8WdviA_bq2OOWZHPg6DlP1uJSfuRhfDWc6jkoA3vWaxyHhrZEnq21ik_1Ct95=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UCvRIBGYIwkxQTwpgqBwqPiw",
+          authorChannelId: {
+            value: "UCvRIBGYIwkxQTwpgqBwqPiw",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 0,
+          publishedAt: "2023-07-27T13:09:02Z",
+          updatedAt: "2023-07-27T13:09:02Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 0,
+      isPublic: true,
+    },
+  },
+  {
+    kind: "youtube#commentThread",
+    etag: "Nm_urW4d4t400G-K58xa0laQRsY",
+    id: "UgxZYX6A5vkY3ueTzSt4AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "ZTVfALJwp_Aa4Ug88FlSoRiQvkM",
+        id: "UgxZYX6A5vkY3ueTzSt4AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay: "Badiya",
+          textOriginal: "Badiya",
+          authorDisplayName: "(KINg)zz",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/yzybgIP52A5u0kKvQEvupMNTwYtA4RNrC8arwjbzV0zPd8m8GwJdr8CO7YbpObTTkJ1JevuKiuY=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UC0FH-WUR6BlST7oz2de83iA",
+          authorChannelId: {
+            value: "UC0FH-WUR6BlST7oz2de83iA",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 0,
+          publishedAt: "2023-07-27T13:09:01Z",
+          updatedAt: "2023-07-27T13:09:01Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 0,
+      isPublic: true,
+    },
+  },
+  {
+    kind: "youtube#commentThread",
+    etag: "vUxrTJQ3edunudWvXi0otHWnjEg",
+    id: "Ugw-FEdVEOz6VsGwAGV4AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "_udLOb2-JTfmDIYhygfxBBPMjl0",
+        id: "Ugw-FEdVEOz6VsGwAGV4AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay: "❤❤❤❤❤❤❤❤",
+          textOriginal: "❤❤❤❤❤❤❤❤",
+          authorDisplayName: "Nitin kumar",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/H6YlwS5LngsAZAZsglTSoHK-ZcNWjBtBKnl_BQC_tZWVM7a-eYLctwdZOI0wKWm3aKnBqVazgA=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UCbFhCeTFurcuQVZqR2vYY5w",
+          authorChannelId: {
+            value: "UCbFhCeTFurcuQVZqR2vYY5w",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 0,
+          publishedAt: "2023-07-27T13:08:53Z",
+          updatedAt: "2023-07-27T13:08:53Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 0,
+      isPublic: true,
+    },
+  },
+  {
+    kind: "youtube#commentThread",
+    etag: "x-BxYj2ziyfLC0ZjpXfy3IOx68g",
+    id: "Ugy_WeWarzhqqvRAeNJ4AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "ZgW3xf2Ux8hPbk-iulz5XljQN_g",
+        id: "Ugy_WeWarzhqqvRAeNJ4AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay: "❤❤❤",
+          textOriginal: "❤❤❤",
+          authorDisplayName: "keshav gadhwal",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/ytc/AOPolaR8WdviA_bq2OOWZHPg6DlP1uJSfuRhfDWc6jkoA3vWaxyHhrZEnq21ik_1Ct95=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UCvRIBGYIwkxQTwpgqBwqPiw",
+          authorChannelId: {
+            value: "UCvRIBGYIwkxQTwpgqBwqPiw",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 0,
+          publishedAt: "2023-07-27T13:08:52Z",
+          updatedAt: "2023-07-27T13:08:52Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 0,
+      isPublic: true,
+    },
+  },
+  {
+    kind: "youtube#commentThread",
+    etag: "baZ-_s8wrvzJgMRGkaKQoIPWpr8",
+    id: "Ugwk6L8oBrUhhNl3amB4AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "Wki3KYZh_M4PmWQNCD8_lUoFAsM",
+        id: "Ugwk6L8oBrUhhNl3amB4AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay: "Pump bol Raha hai... ukhar mat ukhar mat😅",
+          textOriginal: "Pump bol Raha hai... ukhar mat ukhar mat😅",
+          authorDisplayName: "FreezeHour",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/THk-O4zJFl21zhMT4vdHAxa9sMVprzRJ10hl6zqgFe2VdwcHm5lEIqSRscpQt1bnLqMbdQUIsQ=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UC8h5i6V_M3We_mGM4fPgKMg",
+          authorChannelId: {
+            value: "UC8h5i6V_M3We_mGM4fPgKMg",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 0,
+          publishedAt: "2023-07-27T13:08:42Z",
+          updatedAt: "2023-07-27T13:08:42Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 0,
+      isPublic: true,
+    },
+  },
+  {
+    kind: "youtube#commentThread",
+    etag: "tl8nrzm4YghSzb6-eEQ8bj0EEyk",
+    id: "Ugxy6OhJ3SYiNMtjdi14AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "2RYodl1vz23qaVbhuWeb-3iWYYI",
+        id: "Ugxy6OhJ3SYiNMtjdi14AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay:
+            "Tara Singh Back With A Bang<br>That Handpump Scene Was A Goosebumps.....",
+          textOriginal:
+            "Tara Singh Back With A Bang\nThat Handpump Scene Was A Goosebumps.....",
+          authorDisplayName: "Mumtaz Alam",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/ytc/AOPolaRjzHmnoulj9zUJAv4GU3cA3XmHoxd0BofYvlufng=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UC51nUf_rfJ2uGnavyjscNbw",
+          authorChannelId: {
+            value: "UC51nUf_rfJ2uGnavyjscNbw",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 0,
+          publishedAt: "2023-07-27T13:08:28Z",
+          updatedAt: "2023-07-27T13:08:28Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 0,
+      isPublic: true,
+    },
+  },
+  {
+    kind: "youtube#commentThread",
+    etag: "IVosnZaJt8x4aFu2h3yjYY3r2Jc",
+    id: "UgxTP6wYZkZJbKED_uB4AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "vAFsq_elaPEHz4wJTHw7EOr_zVc",
+        id: "UgxTP6wYZkZJbKED_uB4AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay: "SUNNY PAJI TUSI TO CHHA GAYE....",
+          textOriginal: "SUNNY PAJI TUSI TO CHHA GAYE....",
+          authorDisplayName: "Sky.. No Limits",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/0J9-wwPMSU_DpOlRW7crWixaLc01e_Hpep2YliPn1HNl8OpyR-luIukycWdgD-KhzmufKDbbKkA=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UCkFVbevyykdkUsJ1KpvXDDw",
+          authorChannelId: {
+            value: "UCkFVbevyykdkUsJ1KpvXDDw",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 0,
+          publishedAt: "2023-07-27T13:08:22Z",
+          updatedAt: "2023-07-27T13:08:22Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 0,
+      isPublic: true,
+    },
+  },
+  {
+    kind: "youtube#commentThread",
+    etag: "lMDcweNoUzhMdIxDQV6HThSsZ1k",
+    id: "UgwM4k1xvm4LArE0hj94AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "Iww6_rsVxon_AwM6NEPfdCmJBmU",
+        id: "UgwM4k1xvm4LArE0hj94AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay: "Blockbuster hogi",
+          textOriginal: "Blockbuster hogi",
+          authorDisplayName: "Bananas ki galiya",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/3G3JM5WHIERM3pHo2z176w_7RizyerN2ayLMVFOSobAFeLIEROL91aSklZn-08yjhNmTOP_lLA=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UCbmTHVjr82pr9Ux8IVIKwlQ",
+          authorChannelId: {
+            value: "UCbmTHVjr82pr9Ux8IVIKwlQ",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 0,
+          publishedAt: "2023-07-27T13:08:19Z",
+          updatedAt: "2023-07-27T13:08:19Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 0,
+      isPublic: true,
+    },
+  },
+  {
+    kind: "youtube#commentThread",
+    etag: "XKrnxFOicWodMQJiBjzVhT8mgzE",
+    id: "UgweknFRGaTLRE-TB7p4AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "rCclunLNTWUnEde0_wEKZeli3s4",
+        id: "UgweknFRGaTLRE-TB7p4AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay: "Bakwas 😢",
+          textOriginal: "Bakwas 😢",
+          authorDisplayName: "Anshu Kumari",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/ytc/AOPolaSnjNfuSuWiWe6xinAtchfMP7FI9ppWsf6-ds_Ed678to0WBwgG3s6QMKlmrkZu=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UCvPBBFkTjuN1Jlx6CWq_9JQ",
+          authorChannelId: {
+            value: "UCvPBBFkTjuN1Jlx6CWq_9JQ",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 0,
+          publishedAt: "2023-07-27T13:08:18Z",
+          updatedAt: "2023-07-27T13:08:18Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 0,
+      isPublic: true,
+    },
+  },
+  {
+    kind: "youtube#commentThread",
+    etag: "nyMlizr4-HaH6qCsN6RfrL-MlO0",
+    id: "Ugy_hamouMZq1LKRQKJ4AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "mQdFJ37eOv9dicIoWY3NcPoBpyc",
+        id: "Ugy_hamouMZq1LKRQKJ4AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay: "Jay hind🇮🇳",
+          textOriginal: "Jay hind🇮🇳",
+          authorDisplayName: "Romiyo Raj",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/rRTSNj8snr2v9EwH3sP2x5lqfVlxXMM_PlD5aZ6A5Z4bcZ7aEIU0lWLlYZe9rIaoRZ7MirR4cjg=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UC7JIMwJQ5haH0soye8So6Vg",
+          authorChannelId: {
+            value: "UC7JIMwJQ5haH0soye8So6Vg",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 1,
+          publishedAt: "2023-07-27T13:08:10Z",
+          updatedAt: "2023-07-27T13:08:10Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 0,
+      isPublic: true,
+    },
+  },
+  {
+    kind: "youtube#commentThread",
+    etag: "QIFSYFNiN903oTPEDx1sLSZURbU",
+    id: "UgywGIl_36S8xeF6CyF4AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "htUGmK8crpliueJj9rQOlySNFQ4",
+        id: "UgywGIl_36S8xeF6CyF4AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay: "❤❤❤❤❤❤❤❤",
+          textOriginal: "❤❤❤❤❤❤❤❤",
+          authorDisplayName: "PANKAJ SHARMA",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/ytc/AOPolaQNh1wr1CgzBW1XV9mzR9_suDz-U2Vr3X0YsMpFEg=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UCiimF3TjnoVChk_WTLb9NfQ",
+          authorChannelId: {
+            value: "UCiimF3TjnoVChk_WTLb9NfQ",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 0,
+          publishedAt: "2023-07-27T13:08:06Z",
+          updatedAt: "2023-07-27T13:08:06Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 0,
+      isPublic: true,
+    },
+  },
+  {
+    kind: "youtube#commentThread",
+    etag: "j-4ggInZP1sd56UGfJMQhU97wGo",
+    id: "UgxxgF11oDz8_uX5M6Z4AaABAg",
+    snippet: {
+      videoId: "mljj92tRwlk",
+      topLevelComment: {
+        kind: "youtube#comment",
+        etag: "ShZMivNcDKiwA7gDnlypmkaowcA",
+        id: "UgxxgF11oDz8_uX5M6Z4AaABAg",
+        snippet: {
+          videoId: "mljj92tRwlk",
+          textDisplay: "Hand pump dikh gaya",
+          textOriginal: "Hand pump dikh gaya",
+          authorDisplayName: "YAMI HOTEL & RESTAURANT",
+          authorProfileImageUrl:
+            "https://yt3.ggpht.com/A4HG9guTs0sNQoy0Wq_RLzgWBwUerTJBn0g-NlosLgxKxCXBKc-_gpZHxH1XkB3Ua_Mq2gYnXw=s48-c-k-c0x00ffffff-no-rj",
+          authorChannelUrl:
+            "http://www.youtube.com/channel/UC2U6dAAhTu79IC0kLtz_KqQ",
+          authorChannelId: {
+            value: "UC2U6dAAhTu79IC0kLtz_KqQ",
+          },
+          canRate: true,
+          viewerRating: "none",
+          likeCount: 0,
+          publishedAt: "2023-07-27T13:07:55Z",
+          updatedAt: "2023-07-27T13:07:55Z",
+        },
+      },
+      canReply: true,
+      totalReplyCount: 0,
+      isPublic: true,
     },
   },
 ];

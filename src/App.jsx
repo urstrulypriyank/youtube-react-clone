@@ -3,6 +3,7 @@ import Headder from "./components/Headder";
 import Sidebar from "./components/Sidebar";
 import store from "./utils/store";
 import HomePageBody from "./components/HomePageBody";
+import Loader from "./components/Loader";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 // import WatchPage from "./components/WatchPage";
 // import Results from "./components/Results";
@@ -64,15 +65,5 @@ function Default() {
 
       <Outlet />
     </>
-  );
-}
-
-function Loader() {
-  return (
-    <div className="flex items-center justify-center space-x-2 animate-bounce">
-      <div className="w-8 h-8 bg-blue-400 rounded-full"></div>
-      <div className="w-8 h-8 bg-green-400 rounded-full"></div>
-      <div className="w-8 h-8 bg-black rounded-full"></div>
-    </div>
   );
 }
