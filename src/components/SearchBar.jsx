@@ -97,7 +97,10 @@ const SearchBar = () => {
         <button
           className="border border-black  rounded-2xl border-l-0 rounded-l-none px-4 py-1"
           type="submit"
-          onClick={(e) => e.preventDefault()}
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/results?search_query=" + searchText);
+          }}
           onSubmit={() => navigate("/results?search_query=" + searchText)}
         >
           <Link to={"/results?search_query=" + searchText}>🔎</Link>
