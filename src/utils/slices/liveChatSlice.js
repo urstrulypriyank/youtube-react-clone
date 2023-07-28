@@ -5,13 +5,17 @@ const liveChatSlice = createSlice({
   initialState: {
     message: [],
   },
+  isChatVisible: true,
   reducers: {
     push: (state, action) => {
-      state.message.splice(24,1)
+      state.message.splice(24, 1);
       state.message.unshift(action.payload);
+    },
+    toggleChatVisiblity: (state) => {
+      state.isChatVisible = !state.isChatVisible;
     },
   },
 });
 
-export const { push } = liveChatSlice.actions;
+export const { push, toggleChatVisiblity } = liveChatSlice.actions;
 export default liveChatSlice.reducer;

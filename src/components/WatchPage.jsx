@@ -1,13 +1,17 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { hideMenu } from "../utils/slices/hamBurgerSlice";
 import { useSearchParams } from "react-router-dom";
 import CommentsContainer from "./CommentsContainer";
 import LiveChatContainer from "./LiveChatContainer";
+import { push, toggleChatVisiblity } from "../utils/slices/liveChatSlice";
+import store from "../utils/store";
 const WatchPage = () => {
   const dispatch = useDispatch();
   const [params] = useSearchParams();
   const videoId = params.get("v");
+  const [textInput, setTextInput] = useState("");
+  const isChatVisible = useSelector((store) => store.chat.isChatVisible);
   useEffect(() => {
     dispatch(hideMenu());
   }, []);
@@ -24,25 +28,37 @@ const WatchPage = () => {
           allowfullscreen
         ></iframe>
         {/* chat section */}
-        <div className="w-1/3 flex flex-col max-h-[515px] h-full ">
-          <div className="border border-black mx-6  rounded-md  ">
-            <LiveChatContainer />
-          </div>
-          {/* input tag container */}
-          <div className="mx-6 border border-black border-t-0 p-2 rounded-md space-x-2">
-            <input
-              type="text"
-              name=""
-              id=""
-              className="w-[80%] border-b border-black focus:outline-none"
-            />
-            <button className="border border-black  bg-green-500 rounded-md px-2 mx ">
-              Send
-            </button>
-          </div>
+        <div className="w-1/3 flex flex-col max-h-[515px] ">
+          {!isChatVisible && (
+            <>
+              <div className="border border-black mx-6  rounded-md  ">
+                <LiveChatContainer />
+              </div>
+
+              {/* input tag container */}
+              <div className="mx-6 border border-black border-t-0 p-2 rounded-md space-x-2">
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  className="w-[80%] border-b border-black focus:outline-none"
+                  onChange={(e) => setTextInput(e.target.value)}
+                />
+                <button
+                  className="border border-black  bg-green-500 rounded-md px-2 mx "
+                  onClick={() => dispatch(push(textInput))}
+                >
+                  Send
+                </button>
+              </div>
+            </>
+          )}
           {/* hide button container */}
           <div className="flex justify-center mx-6 border border-black border-t-0 p-2 ">
-            <button className="hover:bg-slate-500 rounded-lg w-full ">
+            <button
+              className="hover:bg-slate-500 rounded-lg w-full "
+              onClick={() => dispatch(toggleChatVisiblity())}
+            >
               Toggle Visibility
             </button>
           </div>

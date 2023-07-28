@@ -9,7 +9,7 @@ const LiveChatContainer = () => {
   // logic for api pooling
   useEffect(() => {
     const i = setInterval(() => {
-      dispatch(push(genrateRandomString(7)));
+      dispatch(push(genrateRandomString(12)));
     }, 2000);
     return () => clearInterval(i);
   }, []);
