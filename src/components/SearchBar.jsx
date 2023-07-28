@@ -58,6 +58,7 @@ const SearchBar = () => {
     };
     searchBox.addEventListener("focusin", handleActiveSearchFocus);
     searchBox.addEventListener("focusout", handleInactiveSearchFocus);
+
     return () => {
       searchBox.removeEventListener("focusin", handleActiveSearchFocus);
       searchBox.removeEventListener("focusout", handleInactiveSearchFocus);
@@ -70,7 +71,7 @@ const SearchBar = () => {
         className="flex justify-center items-center mx-auto  "
         onBlur={() => {
           if (mouseOverSuggestionList) return dispatch(setShowSuggestion(true));
-          return dispatch(setShowSuggestion(false));
+          else return dispatch(setShowSuggestion(false));
         }}
         onSubmit={(e) => {
           e.preventDefault();
@@ -100,13 +101,14 @@ const SearchBar = () => {
           onClick={(e) => {
             e.preventDefault();
             navigate("/results?search_query=" + searchText);
+            dispatch(setShowSuggestion(false));
           }}
           onSubmit={() => navigate("/results?search_query=" + searchText)}
         >
           <Link to={"/results?search_query=" + searchText}>🔎</Link>
         </button>
         <div className="fixed left-0 top-14 my-0.5 w-screen z-50 border ">
-          {showSuggestion && suggestionList && mouseOverSuggestionList && (
+          {showSuggestion && suggestionList && (
             <div
               className=" w-[40%] h-96  mx-auto bg-white rounded-lg px-4 py-1  "
               onFocus={() => dispatch(setShowSuggestion(true))}
@@ -120,7 +122,7 @@ const SearchBar = () => {
                   <Link
                     to={"/results?search_query=" + item}
                     key={item}
-                    onClick={() => console.log("click")}
+                    onClick={() => dispatch(setShowSuggestion(false))}
                   >
                     <li key={item}>{item}</li>
                   </Link>
