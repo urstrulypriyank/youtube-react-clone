@@ -17,7 +17,7 @@ const CommentsContainer = ({ videoId }) => {
   if (!commentList) return <div>Loading...</div>;
   // console.log(commentList);
   return (
-    <div className="absolute border border-black shadow-md mt-3 left-0 ml-1 w-[40%] space-y-2 ">
+    <div className="absolute border border-black shadow-md mt-3 left-0 ml-1 w-[60%] space-y-2 ml-10">
       <h3 className="font-bold text-xl p-2">Comments</h3>
       {commentList.map((item) => {
         const { authorDisplayName, authorProfileImageUrl, textDisplay } =
