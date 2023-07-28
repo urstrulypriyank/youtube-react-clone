@@ -14,7 +14,7 @@ const WatchPage = () => {
 
   return (
     <div className="w-screen px-10 absolute mt-4">
-      <div className="w-full flex relative">
+      <div className="w-full flex relative h-[515px]">
         <iframe
           className="w-2/3"
           height="515"
@@ -23,8 +23,9 @@ const WatchPage = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe>
-        <div className="w-1/3 flex flex-col ">
-          <div className="border border-black mx-6  h-[515px] rounded-md flex flex-1  ">
+        {/* chat section */}
+        <div className="w-1/3 flex flex-col max-h-[515px] h-full ">
+          <div className="border border-black mx-6  rounded-md  ">
             <LiveChatContainer />
           </div>
           {/* input tag container */}
@@ -40,8 +41,10 @@ const WatchPage = () => {
             </button>
           </div>
           {/* hide button container */}
-          <div className="flex justify-center mx-6 border border-black border-t-0 p-2">
-            <button className="hover:bg-slate-500 rounded-lg w-full ">Toggle Visibility</button>
+          <div className="flex justify-center mx-6 border border-black border-t-0 p-2 ">
+            <button className="hover:bg-slate-500 rounded-lg w-full ">
+              Toggle Visibility
+            </button>
           </div>
         </div>
       </div>
