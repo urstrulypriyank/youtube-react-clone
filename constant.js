@@ -13,7 +13,9 @@ export const SIDEBAR_WIDTH_REM = "13rem";
 
 // Functional constant
 export const fetchData = async (url, Setter) => {
-  const data = await fetch(url);
+  const data = await fetch(url, {
+    mode: "no-cors",
+  });
   const new_data = await data.json();
   Setter(new_data.items);
 };

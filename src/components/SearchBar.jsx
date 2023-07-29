@@ -22,7 +22,9 @@ const SearchBar = () => {
   const [mouseOverSuggestionList, setMouseOverSuggestionList] = useState(true);
   const searchCache = useSelector((store) => store.searchCache.obj);
   const searchSuggestion = async () => {
-    const data = await fetch(YT_SEARCH_SUGGESTION_API + searchText);
+    const data = await fetch(YT_SEARCH_SUGGESTION_API + searchText, {
+      mode: "no-cors",
+    });
     const new_data = await data.json();
     // console.log(new_data);
     dispatch(setSearchCache({ [searchText]: new_data[1] }));
