@@ -12,7 +12,7 @@ const HomePageBody = () => {
   useEffect(() => {
     dispatch(hideMenu(true));
   }, []);
-  console.log(import.meta.env.VITE_YT_API_KEY);
+
   return (
     <>
       <div
