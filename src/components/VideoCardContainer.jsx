@@ -9,8 +9,11 @@ const Body = () => {
 
   useEffect(() => {
     const url = YT_MOST_POPULAR_API + import.meta.env.VITE_YT_API_KEY;
+    
     const fetchMostPopularVideo = async () => {
-      const data = await fetch(url);
+      const data = await fetch(url, {
+        "Access-Control-Allow-Origin": "*",
+      });
       const new_data = await data.json();
       setVideoList(new_data.items);
       // console.log(new_data.items);

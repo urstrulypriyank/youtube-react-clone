@@ -23,7 +23,7 @@ const SearchBar = () => {
   const searchCache = useSelector((store) => store.searchCache.obj);
   const searchSuggestion = async () => {
     const data = await fetch(YT_SEARCH_SUGGESTION_API + searchText, {
-      mode: "no-cors",
+      "Access-Control-Allow-Origin": "*",
     });
     const new_data = await data.json();
     // console.log(new_data);
