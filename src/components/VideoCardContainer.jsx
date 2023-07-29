@@ -8,12 +8,9 @@ const Body = () => {
   const [videoList, setVideoList] = useState(null);
 
   useEffect(() => {
+    const url = YT_MOST_POPULAR_API + import.meta.env.VITE_YT_API_KEY;
     const fetchMostPopularVideo = async () => {
-      const data = await fetch(
-        YT_MOST_POPULAR_API + import.meta.env.VITE_YT_API_KEY,{
-          mode: "no-cors"
-        }
-      );
+      const data = await fetch(url);
       const new_data = await data.json();
       setVideoList(new_data.items);
       // console.log(new_data.items);
