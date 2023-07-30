@@ -62,7 +62,6 @@ function Default() {
       <div className="mt-14 flex">
         <Sidebar />
       </div>
-
       <Outlet />
     </>
   );
