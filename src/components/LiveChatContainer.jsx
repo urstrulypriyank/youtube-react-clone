@@ -10,7 +10,7 @@ const LiveChatContainer = () => {
   useEffect(() => {
     const i = setInterval(() => {
       dispatch(push(genrateRandomString(12)));
-    }, 2000);
+    }, 700);
     return () => clearInterval(i);
   }, []);
 

@@ -36,7 +36,7 @@ const WatchPage = () => {
               </div>
 
               {/* input tag container */}
-              <div className="mx-6 border border-black border-t-0 p-2 rounded-md space-x-2">
+              <form className="mx-6 border border-black border-t-0 border-b-0 p-2 rounded-md space-x-2">
                 <input
                   type="text"
                   name=""
@@ -45,16 +45,20 @@ const WatchPage = () => {
                   onChange={(e) => setTextInput(e.target.value)}
                 />
                 <button
-                  className="border border-black  bg-green-500 rounded-md px-2 mx "
-                  onClick={() => dispatch(push(textInput))}
+                  className="border border-black border-b-0  bg-green-500 rounded-md px-2 mx "
+                  onClick={(e) => {
+                    e.preventDefault();
+                    dispatch(push(textInput));
+                  }}
+                  type="submit"
                 >
                   Send
                 </button>
-              </div>
+              </form>
             </>
           )}
           {/* hide button container */}
-          <div className="flex justify-center mx-6 border border-black border-t-0 p-2 ">
+          <div className="flex justify-center mx-6 border border-black  p-2 ">
             <button
               className="hover:bg-slate-500 rounded-lg w-full "
               onClick={() => dispatch(toggleChatVisiblity())}

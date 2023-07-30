@@ -11,7 +11,6 @@ import { setShowSuggestion } from "../utils/slices/searchStateSlice";
 const SearchBar = () => {
   const [searchIconVisibility, setSetSearchIconVisibility] = useState(false);
   const [borderColor, setBorderColor] = useState("border-black");
-  // const [searchText, setSearchText] = useState(null);
   const dispatch = useDispatch();
   const searchText = useSelector((store) => store.searchText.searchText);
   const navigate = useNavigate();
@@ -88,8 +87,6 @@ const SearchBar = () => {
               dispatch(setSearchText(e.target.value));
             }}
             onFocus={() => dispatch(setShowSuggestion(true))}
-            // onMouseOver={() => dispatch(setShowSuggestion(true))}
-            // onBlur={() => dispatch(setShowSuggestion(false))}
             onBlur={() => {
               if (mouseOverSuggestionList) dispatch(setShowSuggestion(true));
               else {
