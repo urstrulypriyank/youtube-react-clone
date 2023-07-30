@@ -59,7 +59,7 @@ function Default() {
   return (
     <>
       <Headder />
-      <div className="mt-14 flex">
+      <div className="mt-14 flex ">
         <Sidebar />
       </div>
       <Outlet />

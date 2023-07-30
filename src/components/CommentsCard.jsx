@@ -6,15 +6,15 @@ const CommentsCard = ({
 }) => {
   return (
     <>
-      <div className="flex rounded-xl items-center space-x-3 ">
+      <div className="flex rounded-xl items-center space-x-3 my-4 pl-2 ">
         <img
           src={authorProfileImageUrl}
           alt="authorDisplayName[0]"
           className="w-7 h-7  rounded-full"
         />
-        <h4>{authorDisplayName}</h4>
+        <h4 className="font-bold">@{authorDisplayName}</h4>
       </div>
-      <p className="pl-2">{textDisplay}</p>
+      <p className="pl-10">{textDisplay}</p>
       {replies?.map((item) => {
         const { authorDisplayName, authorProfileImageUrl, textDisplay } =
           item?.snippet;
@@ -26,10 +26,7 @@ const CommentsCard = ({
           replies,
         };
         return (
-          <div
-            className=" pl-2 bg-gray-400 border border-l-black  "
-            key={item.id}
-          >
+          <div className=" ml-4 border border-l-black   " key={item.id}>
             <CommentsCard {...props} />
           </div>
         );

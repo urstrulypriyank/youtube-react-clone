@@ -19,7 +19,7 @@ const SearchBar = () => {
     (store) => store.searchState.showSuggestion
   );
   const [suggestionList, setSuggestionList] = useState(null);
-  const [mouseOverSuggestionList, setMouseOverSuggestionList] = useState(true);
+  const [mouseOverSuggestionList, setMouseOverSuggestionList] = useState(null);
   const searchCache = useSelector((store) => store.searchCache.obj);
   const searchSuggestion = async () => {
     const data = await fetch(YT_SEARCH_SUGGESTION_API + searchText, {
@@ -70,10 +70,6 @@ const SearchBar = () => {
     <>
       <form
         className="flex justify-center items-center mx-auto  "
-        onBlur={() => {
-          if (mouseOverSuggestionList) return dispatch(setShowSuggestion(true));
-          else return dispatch(setShowSuggestion(false));
-        }}
         onSubmit={(e) => {
           e.preventDefault();
           navigate("/results?search_query=" + searchText);
@@ -93,7 +89,13 @@ const SearchBar = () => {
             }}
             onFocus={() => dispatch(setShowSuggestion(true))}
             // onMouseOver={() => dispatch(setShowSuggestion(true))}
-            onBlur={() => dispatch(setShowSuggestion(false))}
+            // onBlur={() => dispatch(setShowSuggestion(false))}
+            onBlur={() => {
+              if (mouseOverSuggestionList) dispatch(setShowSuggestion(true));
+              else {
+                dispatch(setShowSuggestion(false));
+              }
+            }}
           />
         </div>
         <button
@@ -111,21 +113,27 @@ const SearchBar = () => {
         <div className="fixed left-0 top-14 my-0.5 w-screen z-50 border ">
           {showSuggestion && suggestionList && (
             <div
-              className=" w-[40%] h-96  mx-auto bg-white rounded-lg px-4 py-1  "
+              className=" w-[40%] h-72  mx-auto bg-white rounded-xl px-4 py-1  "
               onFocus={() => dispatch(setShowSuggestion(true))}
               onMouseLeave={() => setShowSuggestion(false)}
               onMouseOver={() => {
                 setMouseOverSuggestionList(true);
               }}
             >
-              <ul>
+              <ul className="">
                 {suggestionList?.map((item) => (
                   <Link
                     to={"/results?search_query=" + item}
                     key={item}
                     onClick={() => dispatch(setShowSuggestion(false))}
                   >
-                    <li key={item}>{item}</li>
+                    <li
+                      key={item}
+                      className="space-x-6  flex flex-1 items-center"
+                    >
+                      <span>🔎</span>
+                      <p className="flex items-center">{item}</p>
+                    </li>
                   </Link>
                 ))}
               </ul>

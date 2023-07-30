@@ -16,7 +16,7 @@ const hamBurgerSlice = createSlice({
       else state.sideBarWidthInRem = SIDEBAR_WIDTH_REM;
     },
     hideMenu: (state, action) => {
-      if (!action.payload) state.isMenuVisible = false;
+      if (action.payload == undefined) state.isMenuVisible = false;
       else state.isMenuVisible = action.payload;
     },
   },

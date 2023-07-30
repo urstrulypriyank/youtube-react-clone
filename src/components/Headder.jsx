@@ -11,7 +11,7 @@ import {
   toggleSideBarWidthInRem,
 } from "../utils/slices/hamBurgerSlice";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 // END OF IMPORTS
 const Headder = () => {
   const dispatch = useDispatch();
@@ -28,7 +28,9 @@ const Headder = () => {
             <img src={Ham} alt="I" />
           </li>
           <li className="md:h-20 md:w-20 h-16 w-16  ">
-            <YoutubeLogo />
+            <Link to={"/"}>
+              <YoutubeLogo />
+            </Link>
           </li>
         </ul>
       </div>
