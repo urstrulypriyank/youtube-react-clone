@@ -3,6 +3,8 @@ export const YT_MOST_POPULAR_API =
   " https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&maxResults=50&key=";
 export const YT_SEARCH_SUGGESTION_API =
   "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+export const YT_SEARCH_SUGGESTION_API2 =
+  "https://clients1.google.com/complete/search?client=youtube&hl=en&gl=sg&gs_rn=64&gs_ri=youtube&tok=h3yTGb1h3-yuCBwsAaQpxQ&ds=yt&cp=3&gs_id=2u&q=";
 
 export const YT_SEARCH_API =
   "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25";
@@ -19,6 +21,29 @@ export const fetchData = async (url, Setter) => {
   const new_data = await data.json();
   Setter(new_data.items);
 };
+
+export const buttonListData = [
+  "All",
+  "Music",
+  "Live",
+  "Linux",
+  "Javascript",
+  "Arch Linux",
+  "Computer programming",
+  "Open source",
+  "Optimization",
+  "Benchmark",
+  "Neovim",
+  "DSA",
+  "LinkedList",
+  "Tries",
+  "SSH",
+  "Curl",
+  "Linux Commands",
+  "Wget",
+  "Netstat",
+  "AWS Route53",
+];
 
 // mock api data
 export const MOCK_API_SEARCH_DATA = [

@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import store from "../utils/store";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchText } from "../utils/slices/searchTextSlice";
-import { YT_SEARCH_SUGGESTION_API } from "../../constant";
+import {
+  YT_SEARCH_SUGGESTION_API,
+  YT_SEARCH_SUGGESTION_API2,
+} from "../../constant";
 import { setSearchCache } from "../utils/slices/searchCacheSlice";
 import { Link, Outlet, RouterProvider, useNavigate } from "react-router-dom";
 import { setShowSuggestion } from "../utils/slices/searchStateSlice";
@@ -21,12 +24,13 @@ const SearchBar = () => {
   const [mouseOverSuggestionList, setMouseOverSuggestionList] = useState(null);
   const searchCache = useSelector((store) => store.searchCache.obj);
   const searchSuggestion = async () => {
-    const data = await fetch(YT_SEARCH_SUGGESTION_API + searchText, {
+    const data = await fetch(YT_SEARCH_SUGGESTION_API2 + searchText, {
       "Access-Control-Allow-Origin": "*",
     });
     const new_data = await data.json();
-    dispatch(setSearchCache({ [searchText]: new_data[1] }));
-    setSuggestionList(new_data[1]);
+    console.log(new_data);
+    // dispatch(setSearchCache({ [searchText]: new_data[1] }));
+    // setSuggestionList(new_data[1]);
   };
 
   useEffect(() => {
