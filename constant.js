@@ -4,7 +4,7 @@ export const YT_MOST_POPULAR_API =
 export const YT_SEARCH_SUGGESTION_API =
   "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 export const YT_SEARCH_SUGGESTION_API2 =
-  "https://clients1.google.com/complete/search?client=youtube&hl=en&gl=sg&gs_rn=64&gs_ri=youtube&tok=h3yTGb1h3-yuCBwsAaQpxQ&ds=yt&cp=3&gs_id=2u&q=";
+  " https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=";
 
 export const YT_SEARCH_API =
   "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25";
