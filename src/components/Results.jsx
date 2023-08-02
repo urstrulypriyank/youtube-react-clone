@@ -40,7 +40,7 @@ const Results = () => {
       }}
     >
       {videoList.map((item) => (
-        <Link to={"/watch?v=" + item.id.videoId} key={item.id.videoId}>
+        <Link to={`/watch?v=${item.id.videoId}`} key={item.id.videoId}>
           <VideoCard {...item.snippet} />
         </Link>
       ))}

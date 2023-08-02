@@ -3,6 +3,7 @@ const CommentsCard = ({
   authorProfileImageUrl,
   textDisplay,
   replies,
+  textOriginal,
 }) => {
   return (
     <>
@@ -14,7 +15,7 @@ const CommentsCard = ({
         />
         <h4 className="font-bold">@{authorDisplayName}</h4>
       </div>
-      <p className="pl-10">{textDisplay}</p>
+      <p className="pl-10">{textOriginal}</p>
       {replies?.map((item) => {
         const { authorDisplayName, authorProfileImageUrl, textDisplay } =
           item?.snippet;
@@ -23,6 +24,7 @@ const CommentsCard = ({
           authorDisplayName,
           authorProfileImageUrl,
           textDisplay,
+          textOriginal,
           replies,
         };
         return (

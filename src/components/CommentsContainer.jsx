@@ -11,8 +11,7 @@ const CommentsContainer = ({ videoId }) => {
     "&key=" +
     import.meta.env.VITE_YT_API_KEY;
   useEffect(() => {
-    // fetchData(url, setCommentList);
-    setCommentList(comment_mock_data);
+    fetchData(url, setCommentList);
   }, [url]);
   if (!commentList) return <div>Loading...</div>;
   // console.log(commentList);
@@ -20,7 +19,7 @@ const CommentsContainer = ({ videoId }) => {
     <div className="absolute shadow-xl mt-3 left-0  w-[60%] space-y-2 ml-10">
       <h3 className="font-bold text-xl p-2">Comments</h3>
       {commentList.map((item) => {
-        const { authorDisplayName, authorProfileImageUrl, textDisplay } =
+        const { authorDisplayName, authorProfileImageUrl, textDisplay ,textOriginal} =
           item?.snippet?.topLevelComment?.snippet;
         const replies = item?.replies?.comments;
         let props = {
@@ -28,6 +27,7 @@ const CommentsContainer = ({ videoId }) => {
           authorProfileImageUrl,
           textDisplay,
           replies,
+          textOriginal,
         };
 
         return (
