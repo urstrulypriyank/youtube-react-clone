@@ -3,6 +3,7 @@ import VideoCard from "./VideoCard";
 import { useState } from "react";
 import { YT_MOST_POPULAR_API } from "../../constant";
 import { Link } from "react-router-dom";
+import Loader from "./Loader";
 
 const Body = () => {
   const [videoList, setVideoList] = useState(null);
@@ -26,7 +27,7 @@ const Body = () => {
 
   // if data is not fetched
   if (!videoList) {
-    return <div className="flex justify-center text-2xl">Loading...</div>;
+    return <Loader />;
   }
 
   return (

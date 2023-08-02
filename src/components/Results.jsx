@@ -10,9 +10,10 @@ import {
 } from "../../constant";
 import VideoCard from "./VideoCard";
 import { Link } from "react-router-dom";
+import Loader from "./Loader";
 const Results = () => {
   const dispatch = useDispatch();
-  const [videoList, setVideoList] = useState(MOCK_API_SEARCH_DATA);
+  const [videoList, setVideoList] = useState(null);
   let [searchQuery] = useSearchParams();
   const substractWidth = useSelector(
     (store) => store.menuState.sideBarWidthInRem
@@ -29,7 +30,7 @@ const Results = () => {
     fetchData(url, setVideoList);
   }, [url]);
 
-  if (!videoList) return <h1>Loading...</h1>;
+  if (!videoList) return <Loader />;
   return (
     <div
       className="absolute flex flex-wrap justify-around"
@@ -40,7 +41,7 @@ const Results = () => {
     >
       {videoList.map((item) => (
         <Link to={"/watch?v=" + item.id.videoId} key={item.id.videoId}>
-          <VideoCard {...item.snippet} />;
+          <VideoCard {...item.snippet} />
         </Link>
       ))}
     </div>

@@ -28,7 +28,6 @@ const SearchBar = () => {
       "Access-Control-Allow-Origin": "*",
     });
     const new_data = await data.json();
-    console.log(new_data);
     dispatch(setSearchCache({ [searchText]: new_data[1] }));
     setSuggestionList(new_data[1]);
   };
