@@ -1,7 +1,7 @@
 <br/>
 <p align="center">
   <a href="https://github.com/urstrulypriyank/youtube-react-clone">
-    <img src="https://drive.google.com/file/d/17SzDN_hlyC4JjZ9PBqSbRxV5Y5WS12LW/preview" alt="Logo" width="80" height="80">
+    <img src="assets/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Opensource React Client</h3>
@@ -21,32 +21,32 @@
   </p>
 </p>
 
-![Downloads](https://img.shields.io/github/downloads/urstrulypriyank/youtube-react-clone/total) ![Contributors](https://img.shields.io/github/contributors/urstrulypriyank/youtube-react-clone?color=dark-green) ![Issues](https://img.shields.io/github/issues/urstrulypriyank/youtube-react-clone) ![License](https://img.shields.io/github/license/urstrulypriyank/youtube-react-clone) 
+![Downloads](https://img.shields.io/github/downloads/urstrulypriyank/youtube-react-clone/total) ![Contributors](https://img.shields.io/github/contributors/urstrulypriyank/youtube-react-clone?color=dark-green) ![Issues](https://img.shields.io/github/issues/urstrulypriyank/youtube-react-clone) ![License](https://img.shields.io/github/license/urstrulypriyank/youtube-react-clone)
 
 ## Table Of Contents
 
-* [About the Project](#about-the-project)
-* [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Contributing](#contributing)
-* [License](#license)
-* [Authors](#authors)
-* [Acknowledgements](#acknowledgements)
+- [About the Project](#about-the-project)
+- [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Authors](#authors)
+- [Acknowledgements](#acknowledgements)
 
 ## About The Project
 
-![Screen Shot](https://drive.google.com/file/d/1m1ACvsQWG4Y3lbluj4BeAU9wKnYSRW4K/preview)
+![Screen Shot](assets/screenshot.png)
 
-It is open source youtube client built using 
-The main Features and practices include are: 
- ✅ TailwindCSS for rapid prototyping, react-router-dom for routing
- ✅ Used Redux for state management 
- ✅ Implemented Search and search suggestion Functionality with debouncing and search result caching 
- ✅ Used Lazy loading for optimization and reduced overall loading time
- ✅ N-level deep nested comments section, Live Chats with API Pooling functionality 
+It is open source youtube client built using
+The main Features and practices include are:<br>
+✅ TailwindCSS for rapid prototyping, react-router-dom for routing <br>
+✅ Used Redux for state management <br>
+✅ Implemented Search and search suggestion Functionality with debouncing and search result caching <br>
+✅ Used Lazy loading for optimization and reduced overall loading time <br>
+✅ N-level deep nested comments section, Live Chats with API Pooling functionality <br>
 
 ## Built With
 
@@ -61,19 +61,17 @@ To get a local copy up and running follow these simple example steps.
 
 This is an example of how to list things you need to use the software and how to install them.
 
-
 - NodeJs
 
-````sh
+```sh
 apt install nodejs
- ````
+```
 
 - npm
 
 ```sh
 npm install npm@latest -g
-````
-
+```
 
 ### Installation
 
@@ -106,8 +104,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-* If you have suggestions for adding or removing features, feel free to [open an issue](https://github.com/urstrulypriyank/youtube-react-clone/issues/new) to discuss it, or directly create a pull request after you edit.
 
+- If you have suggestions for adding or removing features, feel free to [open an issue](https://github.com/urstrulypriyank/youtube-react-clone/issues/new) to discuss it, or directly create a pull request after you edit.
 
 ### Creating A Pull Request
 
@@ -123,9 +121,8 @@ Distributed under the MIT License. See [LICENSE](https://github.com/urstrulypriy
 
 ## Authors
 
-* **Priyank Rai** - *Freelancer* - [Priyank Rai](https://github.com/urstrulypriyank) - *Developer*
+- **Priyank Rai** - _Freelancer_ - [Priyank Rai](https://github.com/urstrulypriyank) - _Developer_
 
 ## Acknowledgements
 
-* [Priyank Rai](https://github.com/urstrulypriyank)
-
+- [Priyank Rai](https://github.com/urstrulypriyank)
