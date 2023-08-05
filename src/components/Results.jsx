@@ -3,6 +3,7 @@ import { hideMenu } from "../utils/slices/hamBurgerSlice";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { fetchData } from "../../constant";
+import VideoCardShimmer from "./VideoCardShimmer";
 import {
   YT_SEARCH_API,
   MOCK_API_SEARCH_DATA,
@@ -30,7 +31,7 @@ const Results = () => {
     fetchData(url, setVideoList);
   }, [url]);
 
-  if (!videoList) return <Loader />;
+  if (!videoList) return <VideoCardShimmer />;
   return (
     <div
       className="absolute flex flex-wrap justify-around"

@@ -5,6 +5,7 @@ import store from "./utils/store";
 import HomePageBody from "./components/HomePageBody";
 import Loader from "./components/Loader";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import VideoCardShimmer from "./components/VideoCardShimmer";
 // import WatchPage from "./components/WatchPage";
 // import Results from "./components/Results";
 
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
       {
         path: "/results",
         element: (
-          <Suspense fallback={<Loader />}>
+          <Suspense fallback={<VideoCardShimmer />}>
             <Results />
           </Suspense>
         ),
@@ -57,7 +58,7 @@ export default App;
 
 function Default() {
   return (
-    <>
+    < >
       <Headder />
       <div className="mt-14 flex ">
         <Sidebar />
